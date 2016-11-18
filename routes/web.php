@@ -68,3 +68,9 @@ Route::get('/logout', [
     'uses' => 'AuthController@getLogout',
     'as' => 'logout'
 ]);
+
+// 5.3 內建 auth  ，需要遺忘密碼的功能，所以加入這部份。
+Auth::routes();
+Route::get('/home', function () {
+    return view('index');
+})->name('main');

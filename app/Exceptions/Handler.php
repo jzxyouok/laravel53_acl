@@ -42,11 +42,22 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
+     /*
     public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
     }
+    */
+    public function render($request, Exception $exception)
+    {
+        if (config('app.debug') && !$request->ajax()) {
+            $whoops = new \Whoops\Run;
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+            return $whoops->handleException($exception);
+        }
 
+        return parent::render($request, $exception);
+    }
     /**
      * Convert an authentication exception into an unauthenticated response.
      *

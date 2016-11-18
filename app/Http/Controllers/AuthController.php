@@ -22,10 +22,10 @@ class AuthController extends Controller
     public function postSignUp(Request $request)
     {
         $this->validate($request, [
-            'first_name'   => 'required',
-            'last_name' => 'required',
-            'email' => 'required',
-            'password' => 'required|min:6|max:60',
+            'first_name'   => 'required|max:255',
+            'last_name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+            'password' => 'required|min:6|confirmed',
 
         ], [
             'required' => '必填欄位',
