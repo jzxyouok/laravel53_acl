@@ -13,6 +13,7 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
+        //身份別
         $role_user = Role::where('name', 'User')->first();
         $role_author = Role::where('name', 'Author')->first();
         $role_admin = Role::where('name', 'Admin')->first();
@@ -23,6 +24,7 @@ class UserTableSeeder extends Seeder
         $user->email = 'visitor@example.com';
         $user->password = bcrypt('visitor');
         $user->save();
+        //加入到身份別中
         $user->roles()->attach($role_user);
 
         $admin = new User();

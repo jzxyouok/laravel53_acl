@@ -12,6 +12,7 @@ class RoleTableSeeder extends Seeder
      */
     public function run()
     {
+        //預設多種身份
         $role_user = new Role();
         $role_user->name = 'User';
         $role_user->description = 'A normal User';
