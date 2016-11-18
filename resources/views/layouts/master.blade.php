@@ -15,7 +15,7 @@
     <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="/css/freelancer.min.css" rel="stylesheet">
+    <link href="/css/freelancer.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -30,17 +30,17 @@
     <![endif]-->
 
 </head>
-<body>
+<body id="page-top" class="index">
 @include('partials.header')
 
 <!-- Portfolio Grid Section -->
 <section id="portfolio">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 text-center">
+
  
                 @yield('content')
-            </div>
+
         </div>
     </div>
 </section>

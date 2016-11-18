@@ -34,7 +34,7 @@
 
                     {{ csrf_field() }}
                     <div class="form-group">
-                      <div class="col-sm-offset-2 col-sm-10">
+                      <div class="col-sm-offset-4 col-sm-6">
                         <button type="submit" class="btn btn-default">Sign in</button>
                         <a href="{{url('/password/reset')}}">forgot password</a>
                       </div>
@@ -44,5 +44,5 @@
             </div>
         </div>
     </div>
-    </div>       
+
 @endsection
