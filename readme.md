@@ -29,4 +29,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## 說明
  認證程式碼取自：https://github.com/mschwarzmueller/laravel-playground ，提供可以使用身份角色來權限控管。
  原程式是在 5.2 版架構，移到 5.3 架構。
- 
+
+ *使用 5.3 make:auth ，加入密碼重設的部份，但 login 、 register 不使用。
+  如果要完整除去路徑，修改：
+  vendor/laravel/framework/src/Illuminate/Routing/Router.php
+  auth() 函式
